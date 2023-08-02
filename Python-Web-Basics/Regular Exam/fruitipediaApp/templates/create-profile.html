@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <!-- Create Profile Form -->
+    <section id="register">
+        <div class="form">
+            <h2>Create Profile</h2>
+            <form class="register-form" method="post" action="{% url 'create profile' %}">
+
+                {{ form }}
+                <button type="submit">Create</button>
+                {% csrf_token %}
+
+            </form>
+        </div>
+    </section>
+
+    <script>
+        let inputElements = document.getElementsByTagName('label');
+        while (inputElements.length > 0) {
+            inputElements[0].parentElement.removeChild(inputElements[0]);
+        }
+    </script>
+
+{% endblock %}
